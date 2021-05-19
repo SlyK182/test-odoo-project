@@ -14,6 +14,7 @@ COPY ./*requirements.txt /opt/odoo/
 RUN cd /opt/odoo && find . -maxdepth 1 -name "*requirements.txt" ! -name src_requirements.txt ! -name base_requirements.txt -exec pip install -r {} \;
 
 ENV ADDONS_PATH="/opt/odoo/external-src/server-tools, \
+  /opt/odoo/external-src/sale-workflow, \
   /opt/odoo/external-src/web, \
   /opt/odoo/src/addons, \
   /opt/odoo/local-src," \
